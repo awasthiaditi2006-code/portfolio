@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-display: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --color-brand-blue: #2563EB;
+  --color-brand-cyan: #38BDF8;
+  --color-brand-emerald: #10B981;
+  --color-brand-mint: #34D399;
+}
+
+:root {
+  --bg-primary: #0B1120;
+  --bg-secondary: #0F172A;
+  --bg-card: #141E33;
+  --bg-card-hover: #1A2742;
+  --bg-accent-subtle: rgba(56, 189, 248, 0.08);
+  --bg-green-subtle: rgba(16, 185, 129, 0.08);
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+  --border-subtle: rgba(148, 163, 184, 0.14);
+  --border-active: rgba(56, 189, 248, 0.35);
+  --border-green: rgba(16, 185, 129, 0.35);
+  --accent-blue: #38BDF8;
+  --accent-blue-deep: #2563EB;
+  --accent-green: #10B981;
+  --accent-mint: #34D399;
+  --glow-blue: rgba(56, 189, 248, 0.25);
+  --glow-green: rgba(16, 185, 129, 0.25);
+}
+
+html.light {
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F8FAFC;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #F1F5F9;
+  --bg-accent-subtle: rgba(37, 99, 235, 0.06);
+  --bg-green-subtle: rgba(16, 185, 129, 0.08);
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #64748B;
+  --border-subtle: rgba(15, 23, 42, 0.08);
+  --border-active: rgba(37, 99, 235, 0.30);
+  --border-green: rgba(16, 185, 129, 0.30);
+  --accent-blue: #2563EB;
+  --accent-blue-deep: #1D4ED8;
+  --accent-green: #059669;
+  --accent-mint: #10B981;
+  --glow-blue: rgba(37, 99, 235, 0.15);
+  --glow-green: rgba(16, 185, 129, 0.15);
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-blue);
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background-color: color-mix(in srgb, var(--bg-secondary) 85%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border-subtle);
+}
+
+/* Blue & Emerald Gradient Text */
+.blue-green-gradient-text {
+  background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-green) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtle modern mesh pattern */
+.fine-grid-pattern {
+  background-size: 36px 36px;
+  background-image: 
+    linear-gradient(to right, var(--border-subtle) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border-subtle) 1px, transparent 1px);
+}
