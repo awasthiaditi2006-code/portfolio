@@ -46,8 +46,8 @@ export const GitHubDeployModal: React.FC<GitHubDeployModalProps> = ({ isOpen, on
     },
     {
       title: 'Step 3: Automated Deployment via GitHub Actions',
-      description: 'We have already included `.github/workflows/deploy.yml` in this project! Go to your repo Settings > Pages > Source and select "GitHub Actions". Your site will deploy automatically within 60 seconds.',
-      code: '# Zero configuration required!\n# The pre-configured .github/workflows/deploy.yml handles:\n# 1. Checkout & Node setup\n# 2. npm install & npm run build\n# 3. Publish to GitHub Pages'
+      description: 'We have pre-configured `.github/workflows/deploy.yml` with resilient installation and relative path assets. In your GitHub repo: Settings > Pages > Source > select "GitHub Actions".',
+      code: '# If updating existing repo after fix:\ngit add .\ngit commit -m "fix: update GitHub Pages workflow and package-lock"\ngit push'
     }
   ];
 
